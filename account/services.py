@@ -20,7 +20,7 @@ class SendRequestToEmailManager:
         queries = urlencode({'key': key})
         front_host = settings.FRONT_HOST
         email_confirm_link = settings.CONFIRM_REQUEST_EMAIL
-        return f'{front_host}{email_confirm_link}?{queries}'
+        return f'https://olimpics.pythonanywhere.com/api/v1/auth/confirm-request-to-application/?{queries}'
 
     def send_key(self):
         link = self._make_link()

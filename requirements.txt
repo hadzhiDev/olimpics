@@ -1,5 +1,9 @@
 asgiref==3.7.2
+crispy-bootstrap4==2023.1
 Django==5.0.1
+django-cors-headers==4.3.1
+django-crispy-forms==2.1
+django-filter==23.5
 django-phonenumber-field==7.3.0
 django-rest-registration==0.8.3
 djangorestframework==3.14.0

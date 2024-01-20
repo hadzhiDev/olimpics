@@ -21,6 +21,7 @@ class Application(TimeStampAbstractModel):
     language = models.ForeignKey('account.ProgramingLanguage', models.PROTECT, verbose_name='язык программирования',
                                  help_text='Выберите язык программирования')
     image = models.ImageField(upload_to='books_images/', verbose_name='фото чека')
+    is_confirmed = models.BooleanField('подтверждение', default=False)
 
     def __str__(self):
         return f'{self.full_name}'
