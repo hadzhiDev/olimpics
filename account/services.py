@@ -24,8 +24,8 @@ class SendRequestToEmailManager:
 
     def send_key(self):
         link = self._make_link()
-        subject, to, from_email = 'Reset Password | Hadzhi.kg', self.application.email, settings.EMAIL_HOST_USER
-        html_message = f'this is a  <a href="{link}">link</a> to reset password'
+        subject, to, from_email = 'Email Verification | olimpics.kg', self.application.email, settings.EMAIL_HOST_USER
+        html_message = f'someone used this email for registration. Please confirm verification <a href="{link}">link</a> t'
         plain_message = strip_tags(html_message)
 
         send_mail(
