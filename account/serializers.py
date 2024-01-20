@@ -16,23 +16,21 @@ class ApplicationSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Application
-        fields = ('id', 'email', 'full_name', 'phone', 'language', 'image',)
+        fields = '__all__'
 
 
 class RegisterApplicationSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Application
-        fields = ('email', 'full_name', 'phone', 'language', 'image',)
+        fields = '__all__'
         extra_kwargs = {
             'full_name': {'required': True},
             'phone': {'required': True},
         }
 
     def validate(self, attrs: dict):
-        cop = attrs.copy()
-        cop.pop('is_confirmed')
-        for item in cop.items():
+        for item in attrs.items():
             if not item[1]:
                 raise ValidationError({
                     item[0]: [
