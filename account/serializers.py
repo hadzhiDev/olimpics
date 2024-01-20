@@ -16,7 +16,7 @@ class ApplicationSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Application
-        fields = '__all__'
+        fields = ('id', 'email', 'full_name', 'phone', 'language', 'image',)
 
 
 class RegisterApplicationSerializer(serializers.ModelSerializer):
