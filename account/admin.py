@@ -5,7 +5,7 @@ from account.models import Application, ProgramingLanguage, SendRequestToEmail
 
 @admin.register(Application)
 class ApplicationAdmin(admin.ModelAdmin):
-    list_display = ('id', 'email', 'full_name', 'phone', 'language',)
+    list_display = ('id', 'email', 'full_name', 'phone', 'language', 'image',)
     list_display_links = ('id', 'full_name',)
     search_fields = ('id', 'full_name', 'email', 'phone',)
     list_filter = ('created_at',)

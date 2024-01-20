@@ -17,9 +17,10 @@ class Application(TimeStampAbstractModel):
 
     full_name = models.CharField(max_length=250, verbose_name='фамилия и имя')
     phone = PhoneNumberField(max_length=100, unique=True, verbose_name='номер телефона', blank=True, null=True)
-    email = models.EmailField(verbose_name='электронная почта', unique=True, blank=True, null=False)
+    email = models.EmailField(verbose_name='электронная почта', unique=True, blank=False, null=False)
     language = models.ForeignKey('account.ProgramingLanguage', models.PROTECT, verbose_name='язык программирования',
                                  help_text='Выберите язык программирования')
+    image = models.ImageField(upload_to='books_images/', verbose_name='фото чека')
 
     def __str__(self):
         return f'{self.full_name}'
